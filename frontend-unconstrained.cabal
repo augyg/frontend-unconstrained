@@ -1,0 +1,29 @@
+name: frontend-unconstrained
+version: 0.1
+cabal-version: >= 1.8
+build-type: Simple
+
+
+-- Build W Ghcjs
+library
+  hs-source-dirs: src
+  exposed-modules:
+     FrontendUnconstrained
+  build-depends: base
+--               , frontend
+               , bytestring
+               , reflex-dom
+  -- ghc-options: -Wall -O -fno-show-valid-hole-fits -threaded
+  --              -- unsafe code
+  --              -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields
+  --              -- unneeded code
+  --              -Widentities -Wredundant-constraints
+  -- if impl(ghc >= 8.8)
+  --   ghc-options:
+  --              -Wmissing-deriving-strategies
+  -- if impl(ghcjs)
+  --   ghc-options: -dedupe
+  --   cpp-options: -DGHCJS_BROWSER
+  -- if os(darwin)
+  --   ghc-options: -dynamic
+
